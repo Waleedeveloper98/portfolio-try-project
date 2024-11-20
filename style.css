@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'gilroy';
+    src: url('Gilroy-ExtraBold.woff2') format('woff2');
+    font-weight: 800; /* Extra Bold */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroy';
+    src: url('Gilroy-Heavy.woff2') format('woff2');
+    font-weight: 900; /* Heavy */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroy';
+    src: url('Gilroy-Medium.woff2') format('woff2');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroy';
+    src: url('Gilroy-SemiBold.woff2') format('woff2');
+    font-weight: 600; /* Semi Bold */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroy';
+    src: url('Gilroy-Regular.woff2') format('woff2');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+*::selection{
+    background-color: white;
+    color: #026063;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+
+.web-experience-text span{
+    display: inline-block;
+}
+.dot{ 
+    animation: profile 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+@keyframes profile {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.text-stroke{
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+.web-experience-text::before{
+    content: "Web Experiences";
+    position: absolute;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(2, 96, 99, 0.3);
+}
+.line .center-text{
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: 1px #026063;
+}
+.line .fill-text{
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.heading-bg{
+    color: #021E2F;
+}
+
+.skill-icon-box:hover .gray-svg{
+    opacity: 0;
+}
+.skill-icon-box:hover .color-svg{
+    opacity: 1;
+}
+.inner-testimonial-line{
+    animation: testimonial linear infinite 50s;
+}
+@keyframes testimonial{
+    from{
+        transform: translateX(0%);
+    }to{
+        transform: translateX(-100%);
+    }
+}
+@media (max-width: 600px){
+    .marque-container .line{
+        font-size: 8vw;
+        animation: move 15s linear infinite;
+    }
+    @keyframes move{
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(calc(-200% - 50px));
+        }
+    }
+    .projects-details-section .project-detail span:nth-child(1){
+        font-size: 55px;
+    }
+    .projects-details-section .project-detail span:nth-child(2){
+        font-size: 43px;
+    }
+
+    /* .loader-text-line svg{
+        width: 200px;
+    }  */
+    .inner-testimonial-line{
+        animation: testimonial linear infinite 15s;
+    }
+}
+
+#loader-text-line2 svg path{
+    fill: transparent;
+    stroke: #02a3a8;
+    stroke-width: 1.5px;
+    stroke-dasharray: 230;
+    stroke-dashoffset:230; 
+    opacity: 0;
+}
+.main-heading span {
+    display: inline-block; /* Ensures proper positioning for GSAP animations */
+}
+
+.backToTheTop {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #007F83;
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .backToTheTop:hover {
+    width: 100px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: #007F83;
+    align-items: center;
+ 
+  }
+  
+  .backToTheTop:hover .svgIcon {
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+  .backToTheTop::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    font-size: 0px;
+}
+
+.backToTheTop:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    transition-duration: 0.3s;
+  }
+  
